@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
     <!-- bootstrap css -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -12,43 +11,78 @@
       crossorigin="anonymous"
     />
   </head>
+  <style>
+    .justHover:hover{
+      background-color:  rgba(218, 165, 32, 0.684) !important;
+      transition: 500ms !important;
+      transform: scaleY(30deg)  !important;
+      color: white !important;
+      
+    }
+    header,body {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      background-color: black;
+    }
+  </style>
   <body>
-    <h1 class="text-3xl my-3 text-center">Meals Search food be anythings</h1>
+   <div class="text-center">
+    <h1 class="text-3xl mt-5 pt-4 text-center text-primary">Welcome to TheMealDB</h1>
+   </div>
     <header>
-      <!-- searching flied text area start  -->
-      <header class=" ">
-        <article class="container">
-          <div class="input-group mb-3 container w-75 mx-auto shadow-lg">
-            <input
-              id="inputSearchText"
-              type="text"
-              class="form-control shadow-lg p-3 mb-5 bg-white rounded"
-              placeholder="Searching phone"
-              aria-label="searching by phone's rounded"
-              aria-describedby="button-addon2"
-            />
-            <button
-              id="search_button"
-              class="btn btn-success bg-success rounded search-btn-color w-25 shadow-lg p-3 mb-5 rounded"
-            >
-              Search
-            </button>
-          </div>
-        </article>
-    </header>
-    <!-- searching flied text area end  -->
-    </header>
-    <main>
-      <section id="pContainer" class="row gap-2">
+        <header class=" ">
+            <article class="container">
+              <div class="input-group mb-3 pt-5 container w-50 mx-auto ">
+                <input
+                  id="inputSearchText"
+                  type="text"
+                  class="form-control shadow-lg p-2 mb-5 bg-white rounded"
+                  placeholder="Searching phone"
+                  aria-label="search name's rounded"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  id="search_button"
+                  class="btn btn-success  rounded search-btn-color w-25 shadow-lg p-2 mb-5 rounded"
+                >
+                  Search
+                </button>
+              </div>
+            </article>
+            <!-- searching flied text area end  -->
+          </header>
+
+    <!-- display error  -->
+    <div id="errorMessge" class="d-none">
+      <h3 class="fs-3 text-danger text-center">No found data</h3>
+    </div>
+
+    <!-- show and hide spinner  -->
+    <div
+      id="spinner_div"
+      style="height: 90px"
+      class="d-none text-center d-flex justify-content-center align-items-center"
+    >
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- main container -->
+    <main class="container">
+      <section id="pContainer" class="row border-lg">
         <!-- show meal food  -->
       </section>
+
+      <!-- show button  -->
       <section
         id="show-btn-container"
-        class="d-none showButtonContainer w-25 mx-auto"
+        class="d-none showButtonContainer border text-center mx-auto"
       >
         <button class="btn btn-priamry bg-primary text-white">showData</button>
       </section>
-      <!-- modal  -->
+
+
+      <!-- OfCanvas !  -->
       <div
         class="offcanvas offcanvas-start"
         tabindex="-1"
@@ -56,7 +90,7 @@
         aria-labelledby="offcanvasExampleLabel"
       >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Mira Vai</h5>
           <button
             type="button"
             class="btn-close text-reset"
