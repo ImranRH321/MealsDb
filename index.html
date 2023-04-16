@@ -14,13 +14,78 @@
   </head>
   <body>
     <h1 class="text-3xl my-3 text-center">Meals Search food be anythings</h1>
+    <header>
+      <!-- searching flied text area start  -->
+      <header class=" ">
+        <article class="container">
+          <div class="input-group mb-3 container w-75 mx-auto shadow-lg">
+            <input
+              id="inputSearchText"
+              type="text"
+              class="form-control shadow-lg p-3 mb-5 bg-white rounded"
+              placeholder="Searching phone"
+              aria-label="searching by phone's rounded"
+              aria-describedby="button-addon2"
+            />
+            <button
+              id="search_button"
+              class="btn btn-success bg-success rounded search-btn-color w-25 shadow-lg p-3 mb-5 rounded"
+            >
+              Search
+            </button>
+          </div>
+        </article>
+    </header>
+    <!-- searching flied text area end  -->
+    </header>
     <main>
-      <section
-        id="pContainer"
-        class="row gap-2"
-      >
+      <section id="pContainer" class="row gap-2">
         <!-- show meal food  -->
       </section>
+      <section
+        id="show-btn-container"
+        class="d-none showButtonContainer w-25 mx-auto"
+      >
+        <button class="btn btn-priamry bg-primary text-white">showData</button>
+      </section>
+      <!-- modal  -->
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div id="bodyModal" class="offcanvas-body">
+          <div>
+            Some text as placeholder. In real life you can have the elements you
+            have chosen. Like, text, images, lists, etc.
+          </div>
+          <div class="dropdown mt-3">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+            >
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
   <!-- Option 1: Bootstrap Bundle with Popper -->
