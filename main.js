@@ -1,7 +1,7 @@
 // search inter key ar button
 // www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 // search name daynalic variable set load data
-// display data show data
+// display show data
 // 4. product details daynamic id load data url
 // www.themealdb.com/api/json/v1/1/lookup.php?i=52772
 
@@ -30,11 +30,21 @@ const displayMealsData = (meals) => {
 };
 
 const showDisplay = (obMeal) => {
-  const { strArea, strMealThumb, strYoutube, strMeal } = obMeal;
+  //   console.log(obMeal);
+  const { strArea, strMealThumb, idMeal, strMeal } = obMeal;
+  //   div click handler
   return `
-  <div class="border border-indigo-600 bg-sky-500/50 text-black rounded p-3 shadow-lg hover:bg-white hover:text-black ">
-  <img class="w-[50%] h-[200px] sm:w-[250px] skew-y-6" src=${strMealThumb} alt="" />
-  <h4 class="font-bold my-3">${strMeal}</h4>
-  </div>
+  <div onclick="mealsDetailsProductOrFood('${idMeal}')" class="col-sm-6 col-12  col-md-3  col-lg-4   border  text-black  p-3 shadow-lg hover:bg-white hover:text-black " style="width:250px; height:auto">
+
+  <img class="img-fluid mx-auto rounded" src=${strMealThumb} alt="" />
+  <h4 class="md:font-bold my-3">${strMeal.slice(0, 9)}</h4></div>
+
  `;
+};
+
+const mealsDetailsProductOrFood = async (id) => {
+  const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  //   console.log(data.meals[[0]]);
 };
